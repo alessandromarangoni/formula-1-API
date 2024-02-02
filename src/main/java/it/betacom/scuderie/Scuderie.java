@@ -20,6 +20,8 @@ public class Scuderie {
 	private String nomeVettura;
 	private int punti;
 
+	private String logo;
+
 	@OneToMany(mappedBy = "scuderia", fetch = FetchType.EAGER)
 	@JsonManagedReference
 	private List<Piloti> piloti;
@@ -28,21 +30,21 @@ public class Scuderie {
 	 */
 	public Scuderie() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
-	 * @param nomeScuderie
+	 * @param nomeScuderia
 	 * @param vittorieStagionali
 	 * @param nomeVettura
 	 * @param punti
 	 */
-	public Scuderie(String nomeScuderia, int vittorieStagionali, String nomeVettura, int punti) {
+	public Scuderie(String nomeScuderia, int vittorieStagionali, String nomeVettura, int punti, String logo) {
 		super();
 		this.nomeScuderia = nomeScuderia;
 		this.vittorieStagionali = vittorieStagionali;
 		this.nomeVettura = nomeVettura;
 		this.punti = punti;
+		this.logo = logo;
 	}
 	
 
@@ -51,12 +53,6 @@ public class Scuderie {
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public String getNomeScuderie() {
-		return nomeScuderia;
-	}
-	public void setNomeScuderie(String nomeScuderie) {
-		this.nomeScuderia = nomeScuderie;
 	}
 	public int getVittorieStagionali() {
 		return vittorieStagionali;
@@ -84,4 +80,19 @@ public class Scuderie {
 		this.piloti = piloti;
 	}
 
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public String getNomeScuderia() {
+		return nomeScuderia;
+	}
+
+	public void setNomeScuderia(String nomeScuderia) {
+		this.nomeScuderia = nomeScuderia;
+	}
 }

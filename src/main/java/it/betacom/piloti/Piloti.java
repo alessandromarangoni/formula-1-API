@@ -16,11 +16,8 @@ import jakarta.persistence.Table;
 public class Piloti {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@GeneratedValue(
-			strategy = GenerationType.IDENTITY
-			)
-
 	private String nome;
 	private String cognome;
 	private int punti;

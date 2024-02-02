@@ -3,7 +3,6 @@ package it.betacom.piloti;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import it.betacom.piloti.Piloti;
 
 @Service
 public class PilotiService {
@@ -13,5 +12,10 @@ public class PilotiService {
 
     public List<Piloti> getAllPiloti() {
         return pilotiRepository.findAll();
+    }
+
+    public Piloti addPilota(Piloti pilota){
+        pilotiRepository.save(pilota);
+        return pilota;
     }
 }
