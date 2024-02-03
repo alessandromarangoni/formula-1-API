@@ -13,6 +13,11 @@ public class ScuderieService {
     private ScuderieRepository scuderieRepository;
 
     public List<Scuderie> getAllScuderie() {
+
         return scuderieRepository.findAll(Sort.by("punti").descending());
+    }
+
+    public Scuderie getScuderiaById(Long id){
+        return scuderieRepository.findById(id).orElse(null);
     }
 }
